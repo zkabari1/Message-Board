@@ -11,14 +11,25 @@ import { NewMessageComponent } from './new-message.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatSnackBarModule} from '@angular/material/snack-bar'
-
+import {NavComponent} from './nav.component'
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { HomeComponent } from './home.component';
+import { RegisterComponent } from './register.component';
+import { AuthService } from './auth.service';
+import { LoginComponent } from './login.component';
+import { UserComponent } from './user.component';
 @NgModule({
   declarations: [
     AppComponent,
     MessagesComponent,
-    NewMessageComponent
+    NewMessageComponent,
+    NavComponent,
+    HomeComponent,
+    RegisterComponent,
+    LoginComponent,
+    UserComponent
   ],
   imports: [
     FormsModule,
@@ -30,9 +41,11 @@ import {MatSnackBarModule} from '@angular/material/snack-bar'
     MatInputModule,
     MatFormFieldModule,
     MatButtonModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatToolbarModule,
+    ReactiveFormsModule
   ],
-  providers: [WebService],
+  providers: [WebService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

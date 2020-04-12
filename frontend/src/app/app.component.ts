@@ -1,14 +1,11 @@
 import { Component} from '@angular/core';
-import {MessagesComponent} from './messages.component';
-import{NewMessageComponent} from './new-message.component'
+import {NavComponent} from './nav.component'
 @Component({
   selector: 'app-root',
-  template: `<h1>{{title}}</h1>
-  <new-message></new-message>
-  <messages></messages>'
+  template: `
+  <nav-bar></nav-bar>
+  <router-outlet></router-outlet>
   `,
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'Message Board';
-}
+export class AppComponent {}
